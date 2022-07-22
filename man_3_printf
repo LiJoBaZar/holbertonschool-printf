@@ -1,0 +1,150 @@
+					MANUAL PAGE _PRINTF()
+
+NAME
+
+       _printf - format and print data
+
+DECLARATION FOR PRINT() USED FUNCTION 
+
+       int printf(const char *format, ...)
+       
+    Parameters:
+    
+	format - This is the string that contains the text to be written to stdout. 
+	It can optionally contain embedded format tags that are replaced by the values
+	specified in subsequent additional arguments and formatted as requested. 
+
+DESCRIPTION
+
+Printf allows the display of numeric values, characters and text strings on the screen.
+		
+		Prototype = _printf (control, arg1, arg2...);
+		
+In control we specify a text string (without arguments) or the form in which subsequent arguments  will be displayed. It is also possible to combine both possibilities (text strings and arguments).
+In the case of using arguments, the modifier(s) to be printed on the screen must be indicated in the control as arguments.
+The modifier consists of the % character followed by a conversion character, which indicates what type of data it is.
+
+
+Type conversion specifier
+
+The type conversion specifier character specifies whether to interpret the corresponding argument as a character, a string, a pointer, an integer, or a floating-point number. The type character is the only required conversion specification field, and it appears after any optional fields.
+
+The arguments that follow the format string are interpreted according to the corresponding type character and the optional size prefix. Conversions for character types char and wchar_t are specified by using c or C, and single-byte and multi-byte or wide character strings are specified by using s or S, depending on which formatting function is being used. Character and string arguments that are specified by using c and s are interpreted as char and char* by printf family functions, or as wchar_t and wchar_t* by wprintf family functions. Character and string arguments that are specified by using C and S are interpreted as wchar_t and wchar_t* by printf family functions, or as char and char* by wprintf family functions. 
+
+Integer types such as short, int, long, long long, and their unsigned variants, are specified by using d, i, o, u, x, and X. Floating-point types such as float, double, and long double, are specified by using a, A, e, E, f, F, g, and G. By default, unless they're modified by a size prefix, integer arguments are coerced to int type, and floating-point arguments are coerced to double. On 64-bit systems, an int is a 32-bit value; so, 64-bit integers will be truncated when they're formatted for output unless a size prefix of ll or I64 is used. Pointer types that are specified by p use the default pointer size for the platform.
+
+Type field characters
+
+c 
+Character
+When used with printf functions, specifies a single-byte character; when used with wprintf functions, specifies a wide character.
+
+d
+Integer
+Signed decimal integer.
+
+i
+Integer
+Signed decimal integer.
+
+o
+Integer
+Unsigned octal integer.
+
+u
+Integer
+Unsigned decimal integer.
+
+x
+Integer
+Unsigned hexadecimal integer; uses "abcdef".
+
+X
+Integer
+Unsigned hexadecimal integer; uses "ABCDEF".
+
+p
+Pointer type
+Display the argument as an address in hexadecimal digits.
+
+s
+String
+When used with printf functions, specifies a single-byte or multi-byte character string; when used with wprintf functions, specifies a wide-character string. Characters are displayed up to the first null character or until the precision value is reached.
+
+S
+String
+When used with printf functions, specifies a wide-character string; when used with wprintf functions, specifies a single-byte or multi-byte character string. Characters are displayed up to the first null character or until the precision value is reached.
+
+%
+Percent
+It is a character, which can be used as a print character; however, used in company with another character mentioned above, it gives you the power to make changes.
+
+
+Flag characters
+
++
+Use a sign (+ or -) to prefix the output value if it's of a signed type.
+Sign appears only for negative signed values (-).
+
+#
+When it's used with the o, x, or X format, the # flag uses 0, 0x, or 0X, respectively, to prefix any nonzero output value.
+No prefix appears.
+
+When it's used with the e, E, f, F, a, or A format, the # flag forces the output value to contain a decimal point.
+Decimal point appears only if digits follow it.
+
+When it's used with the g or G format, the # flag forces the output value to contain a decimal point and prevents the truncation of trailing zeros.
+
+Ignored when used with c, d, i, u, or s.
+Decimal point appears only if digits follow it. Trailing zeros are truncated.
+
+
+Option characters
+
+The value must be converted to an ``alternate format''. For or conversions , the first character of the output string is made 0 (by prefixing a zero if it was already nonzero). For conversions x and X , the string `0x' (or `0X' for X conversions ) precedes results that are non-0. For conversions to , A , e , E , f , g , and G, the result will contain a decimal point, even if no digit follows it (normally, a decimal point only appears in the result of those conversions that are followed by any digit). For g and G conversions , trailing zeros are not stripped from the result, as would otherwise be the case. For other conversions, the result is undefined.
+
+0
+The value must be padded with zeros. For all conversions except for n , the converted value is left-padded with zeros instead of blanks. If in a numeric conversion ( d , i , o , u , x , y X ), a precision is indicated, the 0 flag is ignored.
+
+-
+The converted value is left-justified on the field boundary. (By default, the justification is to the right). Except for n conversions , the converted value is padded on the right with blanks, rather than on the left with blanks or zeroes. A - overrides a 0 if both are indicated.
+
++
+A sign (+ or -) will always be placed in front of a number produced by a signed conversion. By default, only the sign is used for negative numbers. A + overwrites a space if both are used.
+The previous five option characters are defined in standard C. SUSv2 specifies an additional option character.
+
+
+Length gauge
+
+
+h
+The next integer conversion matches a short int or unsigned short int argument, or the next n conversion matches a pointer to a short int argument .
+
+l
+The following integer conversion corresponds to a long int or unsigned long int argument , or that the following conversion n corresponds to a pointer to a long int argument, or that the following conversion c corresponds to a wint_t argument , or that the following conversion s corresponds to a pointer to a wchar_t argument .
+
+
+Files used for our PRINTF functionality.
+
+main.h - Contains the header files with function prototypes and structure for specifiers.
+
+_prinft.c - Contains the structure that produces output according to a format.
+
+mandatory.c - Contains the functions that write a char to stdout (mandatory).
+
+_putchar.c - Contains the function putchar.
+
+
+AUTHOR        
+ 
+       Written by Johanna Balcazar 
+       	            David Santiago Arias Lombana
+
+COPYRIGHT      
+   
+Copyright © 2022 Holberton School C18.
+ C library function - printf()    <https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm#>.
+<http://es.tldp.org/Paginas-manual/man-pages-es-1.28/man3/printf.3.html>.
+<https://docs.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-170>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
