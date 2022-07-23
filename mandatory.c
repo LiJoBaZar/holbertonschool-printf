@@ -77,7 +77,7 @@ int print_i(va_list i)
  * @i: base 10 integer to print
  * Return: number of printed digits
  */
- 
+
 int print_d(va_list i)
 {
 	int a[10];
@@ -91,7 +91,7 @@ int print_d(va_list i)
 		counter++;
 	}
 	a[0] = n / m;
-	
+
 	for (; j < 10; j++)
 	{
 		m /= 10;
