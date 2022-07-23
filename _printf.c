@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 			{
         _putchar(format[i]);
         counter+=2;
-        continue;
+        i++;
       }
 	}
 	va_end(name);
