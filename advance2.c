@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- *print_u - Unsigned decimal integer
+ *printf_udi - Unsigned decimal integer
  *
  *@arg: arg
  *Return: length
  */
-int print_u(va_list u)
+int printf_udi(va_list arg)
 {
 	unsigned int num, a = 0, div;
 
-	num = va_arg(u, int);
+	num = va_arg(arg, int);
 
 	if (num == 0)
 	{
@@ -32,18 +32,18 @@ int print_u(va_list u)
 }
 
 /**
- *print_o - Unsigned octal
+ *printf_oct - Unsigned octal
  *
  *@arg: arg
  *Return: length
  */
-int print_o(va_list o)
+int printf_oct(va_list arg)
 {
 
 	unsigned int num, a = 0, i = 0;
 	int tab[100];
 
-	num = va_arg(o, int);
+	num = va_arg(arg, int);
 	if (num < 9)
 	{
 	putchar(num + '0');
@@ -67,13 +67,13 @@ int print_o(va_list o)
 }
 
 /**
- *print_h - Unsigned hexadecimal integer
+ *printf_hex - Unsigned hexadecimal integer
  *@arg: arg
  *Return: length
  */
-int print_h(va_list h)
+int printf_hex(va_list arg)
 {
-	unsigned int n = va_arg(h, unsigned int);
+	unsigned int n = va_arg(arg, unsigned int);
 	unsigned int a[1024];
 	int i = 0, t = 0;
 	char p;
@@ -101,14 +101,14 @@ int print_h(va_list h)
 }
 
 /**
- *print_H - Unsigned hexadecimal integer (uppercase)
+ *printf_Hex - Unsigned hexadecimal integer (uppercase)
  *@arg: arg
  *Return: length
  */
-int print_H(va_list H)
+int printf_Hex(va_list arg)
 {
 
-	unsigned int n = va_arg(H, unsigned int);
+	unsigned int n = va_arg(arg, unsigned int);
 	int a[1024], i = 0, t = 0;
 	char p;
 
@@ -138,14 +138,14 @@ int print_H(va_list H)
 }
 
 /**
- *print_S - return an str
+ *printf_STR - return an str
  *@arg: var to write
  *Return: string
  */
-int print_S(va_list S)
+int printf_STR(va_list arg)
 {
 	int i = 0, b;
-	char *s = va_arg(S, char *);
+	char *s = va_arg(arg, char *);
 
 		if (s == NULL)
 		s = "(null)";

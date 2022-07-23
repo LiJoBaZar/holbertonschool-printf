@@ -3,18 +3,18 @@
  *pchar - return char
  *@arg: arg
  *Return: 1 on success
- *
+ */
 int pchar(va_list arg)
 {
 	putchar(va_arg(arg, int));
 	return (1);
 }
 
-**
+/**
  *pstr - return an str
  *@arg: var to write
  *Return: string
- *
+ */
 
 int pstr(va_list arg)
 {
@@ -29,14 +29,14 @@ int pstr(va_list arg)
 		i++;
 	}
 	return (i);
-}*/
+}
 
 /**
  *pperc - return per
  *@arg: arg
  *Return: per
  */
-int print_perc(va_list %)
+int print_perc(va_list arg)
 {
 		(void)arg;
 		putchar('%');
@@ -47,7 +47,7 @@ int print_perc(va_list %)
  *pint - retun an int
  *@arg: arg
  *Return: len
- *
+ */
 int pint(va_list arg)
 {
 	int n = va_arg(arg, int);
@@ -74,21 +74,21 @@ int pint(va_list arg)
 		d /= 10;
 		}
 	return (len);
-}*/
+}
 
 /**
- *print_b - make a b
+ *pbin - make a b
  *@arg: arg
  *Return: len
  */
 
-int print_b(va_list b)
+int pbin(va_list arg)
 {
 	unsigned int b[32];
 	int i = 0;
 	unsigned int n = 0, j = 0;
 
-	n = va_arg(b, unsigned int);
+	n = va_arg(arg, unsigned int);
 	if (n <= 1)
 	{
 		putchar(n + '0');

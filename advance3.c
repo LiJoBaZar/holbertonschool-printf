@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- *hexa - prints in hexadecimal form in lowercase.
+ *printf_hexa - prints in hexadecimal form in lowercase.
  *@n: unsigned ling int
  *Return: j
- *
-int hexa(unsigned int n)
+ */
+int printf_hexa(unsigned int n)
 {
 	unsigned int a[1024];
 	int i = 0, j = 0;
@@ -31,17 +31,17 @@ int hexa(unsigned int n)
 		putchar(p);
 	}
 	return (j);
-}*/
+}
 
 /**
- *print_p - print pointer
+ *printf_pntr - print pointer
  *@arg: arg
  *Return: length
  */
-int print_p(va_list p)
+int printf_pntr(va_list arg)
 {
 
-	unsigned long int n = va_arg(p, unsigned long int);
+	unsigned long int n = va_arg(arg, unsigned long int);
 	int len = 0;
 
 	putchar('0');
@@ -52,14 +52,14 @@ int print_p(va_list p)
 }
 
 /**
- *print_r - print reversed string
+ *printf_revs - print reversed string
  *@arg: arg
  *Return: len
  */
-int print_r(va_list r)
+int printf_revs(va_list arg)
 {
 	int i = 0;
-	char *s = va_arg(r, char *);
+	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
 	{
@@ -78,9 +78,9 @@ int print_r(va_list r)
 	return (strlen(s));
 }
 
-int print_R(va_list R)
+int printf_root(va_list arg)
 {
-	char *s = va_arg(R, char *);
+	char *s = va_arg(arg, char *);
 	int i, j, count = 0;
 	char code[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char encode[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
