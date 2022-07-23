@@ -117,6 +117,8 @@ Output: Let us compile and run the above program to produce the following result
   ● All your header files should be include guarded.
   
   ● Note that we will not provide the _putchar function for this project.
+  
+  https://github.com/LiJoBaZar/holbertonschool-printf/blob/zero_day/test/FlowChart%20Printf%20Funciton%20(1).png
 
 ## Authors:
 
