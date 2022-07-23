@@ -68,7 +68,7 @@ int _printf(const char *format, ...)
 				i += 2;
 				continue;
 			}
-      else if (format[i] == '%' format[i + 1] != 'K' && format[i + 1] != '!')
+      else if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')
       {
         function = check_format(&format[i + 1]);
 				if (function == NULL)
