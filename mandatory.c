@@ -7,7 +7,7 @@
  * @c: character to print
  * Return: Always 1 (Success)
  */
- 
+
 int print_c(va_list c)
 {
 	char character = (char)va_arg(c, int);
@@ -21,7 +21,7 @@ int print_c(va_list c)
  * @s: string to print
  * Return: i
  */
- 
+
 int print_s(va_list s)
 {
 	char *str = va_arg(s, char *);
@@ -39,11 +39,11 @@ int print_s(va_list s)
  * @i: integer to print
  * Return: number of printed digits
  */
- 
+
 int print_i(va_list i)
 {
-	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
+	int a[11];
+	int j = 1, m = 10000000000, n, sum = 0, counter = 0;
 
 	n = va_arg(i, int);
 	if (n < 0)
@@ -54,16 +54,16 @@ int print_i(va_list i)
 	}
 	a[0] = n / m;
 
-	for (; j < 10; j++)
+	for (; j < 11; j++)
 	{
 		m /= 10;
 		a[j] = (n / m) % 10;
 	}
 
-	for (j = 0; j < 10; j++)
+	for (j = 0; j < 11; j++)
 	{
 		sum += a[j];
-		if (sum != 0 || j == 9)
+		if (sum != 0 || j == 10)
 		{
 			_putchar('0' + a[j]);
 			counter++;
@@ -80,8 +80,8 @@ int print_i(va_list i)
  
 int print_d(va_list i)
 {
-	int a[10];
-	int j = 1, m = 1000000000, n, sum = 0, counter = 0;
+	int a[11];
+	int j = 1, m = 10000000000, n, sum = 0, counter = 0;
 
 	n = va_arg(i, int);
 	if (n < 0)
@@ -92,16 +92,16 @@ int print_d(va_list i)
 	}
 	a[0] = n / m;
 	
-	for (; j < 10; j++)
+	for (; j < 11; j++)
 	{
 		m /= 10;
 		a[j] = (n / m) % 10;
 	}
 
-	for (j = 0; j < 10; j++)
+	for (j = 0; j < 11; j++)
 	{
 		sum += a[j];
-		if (sum != 0 || j == 9)
+		if (sum != 0 || j == 10)
 		{
 			_putchar('0' + a[j]);
 			counter++;
