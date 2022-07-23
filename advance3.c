@@ -46,7 +46,7 @@ int printf_pntr(va_list arg)
 
 	putchar('0');
 	putchar('x');
-	len += hexa(n);
+	len += printf_hexa(n);
 	len = len + 2;
 	return (len);
 }

@@ -1,37 +1,39 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
-#include <stdarg.h>
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+#include <unistd.h>
 
 /**
- * struct print - structure for printing various types
- * @type: type to print
- * @function: function to print
+ *struct print - Struct op
+ *
+ *@t: The operator
+ *@f: The function associated
  */
- 
 typedef struct print
 {
-	char *type;
-	int (*function)(va_list);
+	char t;
+	int (*f)(va_list);
 } print_t;
 
-/* Mandatory Functions */
+
 int _printf(const char *format, ...);
-int _putchar(char c);
-int print_c(va_list c);
-int print_s(va_list s);
-int print_i(va_list i);
-int print_d(va_list d);
-
-/* Advanced Functions */ 
-int print_b(va_list b);
-int print_u(va_list u);
-int print_o(va_list o);
-int print_x(va_list x);
-int print_X(va_list X);
-int print_p(va_list p);
-int print_S(va_list S);
-int print_r(va_list r);
-int print_R(va_list R)
-
+int g_printf(const char c, va_list ap);
+int pchar(va_list arg);
+int printf_str(va_list arg);
+int printf_perc(va_list arg);
+int printf_int(va_list arg);
+int printf_bin(va_list arg);
+int printf_udi(va_list arg);
+int printf_oct(va_list arg);
+int printf_hex(va_list arg);
+int printf_HEX(va_list arg);
+int printf_STR(va_list arg);
+int printf_pntr(va_list arg);
+int printf_revs(va_list arg);
+int printf_root(va_list arg);
+int incount(int a);
+int printf_hexa(unsigned int n);
 #endif

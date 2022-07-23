@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * intlen - count the number of an int
+ * incount - count the number of an int
  * @a: int to count
  * Return: count 
  */
 
-int intlen(int a)
+int incount(int a)
 	
 {
 	int count=0;

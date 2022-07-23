@@ -101,11 +101,11 @@ int printf_hex(va_list arg)
 }
 
 /**
- *printf_Hex - Unsigned hexadecimal integer (uppercase)
+ *printf_HEX - Unsigned hexadecimal integer (uppercase)
  *@arg: arg
  *Return: length
  */
-int printf_Hex(va_list arg)
+int printf_HEX(va_list arg)
 {
 
 	unsigned int n = va_arg(arg, unsigned int);

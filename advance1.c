@@ -11,12 +11,12 @@ int pchar(va_list arg)
 }
 
 /**
- *pstr - return an str
+ *printf_str - return an str
  *@arg: var to write
  *Return: string
  */
 
-int pstr(va_list arg)
+int printf_str(va_list arg)
 {
 	int i = 0;
 	char *s = va_arg(arg, char *);
@@ -32,11 +32,11 @@ int pstr(va_list arg)
 }
 
 /**
- *pperc - return per
+ *printf_perc - return per
  *@arg: arg
  *Return: per
  */
-int print_perc(va_list arg)
+int printf_perc(va_list arg)
 {
 		(void)arg;
 		putchar('%');
@@ -44,11 +44,11 @@ int print_perc(va_list arg)
 }
 
 /**
- *pint - retun an int
+ *printf_int - retun an int
  *@arg: arg
  *Return: len
  */
-int pint(va_list arg)
+int printf_int(va_list arg)
 {
 	int n = va_arg(arg, int);
 	int d, len;
@@ -77,12 +77,12 @@ int pint(va_list arg)
 }
 
 /**
- *pbin - make a b
+ *printf_bin - make a b
  *@arg: arg
  *Return: len
  */
 
-int pbin(va_list arg)
+int printf_bin(va_list arg)
 {
 	unsigned int b[32];
 	int i = 0;
