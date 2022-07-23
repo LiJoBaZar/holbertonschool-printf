@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
                 }                                                                                                                               
                 if (format[i] == '%' && format[i + 1] != 'K' && format[i + 1] != '!')                                                           
                 {                                                                                                                               
-                        a = get_printf(*(format + (i + 1)), ap);                                                                                
+                        a = g_printf(*(format + (i + 1)), ap);                                                                                
                         if(a != 0){                                                                                                             
                                 j = j + a;                                                                                                      
                                 i = i + 2;                                                                                                      
